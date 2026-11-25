@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evidence-Driven ACS/VMS to SIEM Integration Feasibility | SOCRoot Labs</title>
+<meta name="description" content="A documentary assessment of ACS/VMS application security telemetry and proposed Wazuh SIEM integration.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SOCRoot Labs">
+<meta property="og:title" content="Evidence-Driven ACS/VMS to SIEM Integration Feasibility">
+<meta property="og:description" content="A documentary assessment of ACS/VMS application security telemetry and proposed Wazuh SIEM integration.">
+<link rel="stylesheet" href="/style.css">
+
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header><a href="/" class="brand">SOC<span>ROOT</span> / LABS</a><nav aria-label="Primary"><a href="/case-studies/" aria-current="page">Case studies</a><a href="/about/">About</a></nav></header>
+<main id="main" tabindex="-1"><section class="hero"><p class="eyebrow">Independent documentary case study</p><h1>Evidence-Driven ACS/VMS to SIEM Integration Feasibility</h1><p class="lead">Commercial physical-security applications produce several event families. This study evaluates which application security events could support SIEM use cases and what a lab must verify first.</p></section><a class="cta" href="/case-studies/acs-vms-siem/explorer/">Open the interactive explorer</a><section id="challenge"><h2>The engineering challenge</h2><p>A door unlock reports activity in the physical domain. A successful or failed operator login, a role change, and an application audit configuration change describe the security of the application itself. Each needs its own collection and attribution checks.</p></section>
+<section id="method"><h2>Research methodology</h2><ol class="method">
+<li><strong>Qualify the OEM and deployment.</strong> Record the evaluated product, build, platform, licensing and lab-access constraints.</li>
+<li><strong>Map requirement-level telemetry.</strong> Separate application availability, export availability and field support. Record claim source and limitations.</li>
+<li><strong>Gate first, then compare.</strong> Use weighted criteria to compare viable candidates and state unknowns and uncertainty explicitly.</li>
+<li><strong>Plan independent validation.</strong> Define transport, semantics and correlation checks before integration.</li></ol></section><section id="comparison"><h2>Selected OEM findings</h2>
+<div class="cards">
+<article><h3>AXIS Camera Station Pro</h3><strong class="state">First transport-validation candidate</strong><p>The assessed documentation describes continuous plain-text audit and event exports. Validate raw receipt, rotation and exact authentication fields before relying on the route.</p><a href="https://help.axis.com/en-us/axis-camera-station-pro">AXIS user manual</a></article>
+<article><h3>Genetec Security Center</h3><strong class="state">Strongest documented app-event coverage among evaluated products</strong><p>Documentation covers app logons and selected audit changes. Evaluation entitlement, scheduled export completeness and field fidelity remain PoC dependencies.</p><a href="https://techdocs.genetec.com/">Genetec documentation portal</a></article>
+</div></section><section id="architecture"><h2>Proposed Wazuh architecture</h2>
+<p class="muted">Each handoff is a validation dependency. Supported collection paths depend on the evaluated build.</p>
+<ol class="pipeline">
+<li><strong>Application audit</strong><span>Establish event class and source identity.</span></li>
+<li><strong>Supported audit export</strong><span>Confirm representation, entitlement and completeness.</span></li>
+<li><strong>Secure collection</strong><span>Use a read-only collector, a Wazuh Agent or an approved intake.</span></li>
+<li><strong>Wazuh Manager</strong><span>Reconcile receipt before parsing and normalization.</span></li>
+<li><strong>Host correlation</strong><span>Join application and host evidence with justified identity and time bounds.</span></li>
+</ol></section><section id="validation"><h2>Validation boundaries</h2>
+<div class="cards three">
+<article><h3>Documentary assessment</h3><strong class="state">Completed · PASS</strong><p>Product documentation supports a conditional recommendation to scope a transport-validation PoC.</p></article>
+<article><h3>Empirical PoC</h3><strong class="state">Open · Not performed</strong><p>Collect and reconcile observations in an authorized lab.</p></article>
+<article><h3>Production suitability</h3><strong class="state">Undetermined</strong><p>Assess security, operations and support after empirical validation.</p></article>
+</div></section><section id="poc"><h2>PoC readiness</h2><p class="muted">Prospective acceptance areas. Each layer remains open and must be assessed separately.</p>
+<div class="cards three">
+<article><h3>L1 · Transport</h3><p>Reconcile a known source event with raw receipt and capture recovery results across restart and rotation.</p></article>
+<article><h3>L2 · Semantics</h3><p>Validate actor, action, target, timestamp and outcome against an approved reference.</p></article>
+<article><h3>L3 · Correlation</h3><p>Justify identity and time matching, then test ambiguity and alternative explanations.</p></article>
+</div></section><section><h2>Engineering contribution</h2><p>The work produced a comparative assessment method, evidence model, decision framework, PoC acceptance plan and interactive decision-support interface.</p><a class="cta" href="/case-studies/acs-vms-siem/explorer/">Explore the modeled decisions</a></section></main>
+<footer><p>SOCRoot Labs · Independent security engineering research</p><a href="/about/">Research scope and disclosures</a></footer>
+</body></html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive Engineering Explorer | SOCRoot Labs</title>
+<meta name="description" content="Explore selected OEM results, evidence classes, illustrative decision gates and proposed PoC checks.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SOCRoot Labs">
+<meta property="og:title" content="Interactive Engineering Explorer">
+<meta property="og:description" content="Explore selected OEM results, evidence classes, illustrative decision gates and proposed PoC checks.">
+<link rel="stylesheet" href="/style.css">
+<script src="/demo.js" defer></script>
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header><a href="/" class="brand">SOC<span>ROOT</span> / LABS</a><nav aria-label="Primary"><a href="/case-studies/" aria-current="page">Case studies</a><a href="/about/">About</a></nav></header>
+<main id="main" tabindex="-1"><section class="hero"><p class="eyebrow">Case study explorer</p><h1>Explore the integration decision</h1><p class="lead">Compare published findings, inspect evidence semantics and test a simplified eligibility model.</p></section><nav class="section-nav" aria-label="Explorer sections"><a href="#comparison">OEM comparison</a><a href="#evidence">Evidence classes</a><a href="#demo">Decision simulator</a><a href="#architecture">Architecture</a><a href="#poc">PoC readiness</a></nav><section id="comparison"><h2>Selected OEM findings</h2>
+<div class="cards">
+<article><h3>AXIS Camera Station Pro</h3><strong class="state">First transport-validation candidate</strong><p>The assessed documentation describes continuous plain-text audit and event exports. Validate raw receipt, rotation and exact authentication fields before relying on the route.</p><a href="https://help.axis.com/en-us/axis-camera-station-pro">AXIS user manual</a></article>
+<article><h3>Genetec Security Center</h3><strong class="state">Strongest documented app-event coverage among evaluated products</strong><p>Documentation covers app logons and selected audit changes. Evaluation entitlement, scheduled export completeness and field fidelity remain PoC dependencies.</p><a href="https://techdocs.genetec.com/">Genetec documentation portal</a></article>
+</div></section><section id="evidence"><h2>Evidence classification explorer</h2><p>Filter four publication-safe examples by status. The hypothetical example represents only an input to the simulator.</p>
+<label for="evidence-filter">Evidence class</label>
+<select id="evidence-filter"><option value="all">All classes</option><option value="documented">Documented</option><option value="proposed">Proposed</option><option value="unconfirmed">Unconfirmed</option><option value="hypothetical">Hypothetical</option></select>
+<p id="evidence-count" aria-live="polite"></p><div class="cards">
+<article data-evidence="documented"><h3>Documented · File collection</h3><p>Wazuh describes what its log collector accepts. Documentary support applies to this capability.</p><a href="https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/localfile.html">Wazuh localfile reference</a></article>
+<article data-evidence="proposed"><h3>Proposed · Secure handoff</h3><p>A read-only collector and a supported intake are a candidate design subject to validation.</p></article>
+<article data-evidence="unconfirmed"><h3>Unconfirmed · Exported actor field</h3><p>Check the raw exported record, then compare it with the operator action and host evidence.</p></article>
+<article data-evidence="hypothetical"><h3>Hypothetical · Missing mandatory event</h3><p>Set the event-coverage gate to FAIL to explore its modeled consequence.</p></article>
+</div></section>
+<section id="demo"><h2>Illustrative Decision Simulator</h2>
+<p>All inputs below are hypothetical. This simplified model illustrates decision gates. Scope the proposed PoC using the documentary findings and empirical checks.</p>
+<div class="sim"><div id="gates"></div><aside><div aria-live="polite"><h3 id="verdict">CONDITIONAL GO</h3><p id="explanation">One or more illustrative gates remain open.</p></div>
+<button id="reset" type="button">Reset illustrative gates</button></aside></div>
+<noscript><p>The gate simulator requires JavaScript.</p></noscript></section><section id="architecture"><h2>Proposed Wazuh architecture</h2>
+<p class="muted">Each handoff is a validation dependency. Supported collection paths depend on the evaluated build.</p>
+<ol class="pipeline">
+<li><strong>Application audit</strong><span>Establish event class and source identity.</span></li>
+<li><strong>Supported audit export</strong><span>Confirm representation, entitlement and completeness.</span></li>
+<li><strong>Secure collection</strong><span>Use a read-only collector, a Wazuh Agent or an approved intake.</span></li>
+<li><strong>Wazuh Manager</strong><span>Reconcile receipt before parsing and normalization.</span></li>
+<li><strong>Host correlation</strong><span>Join application and host evidence with justified identity and time bounds.</span></li>
+</ol></section><section id="poc"><h2>PoC readiness</h2><p class="muted">Prospective acceptance areas. Each layer remains open and must be assessed separately.</p>
+<div class="cards three">
+<article><h3>L1 · Transport</h3><p>Reconcile a known source event with raw receipt and capture recovery results across restart and rotation.</p></article>
+<article><h3>L2 · Semantics</h3><p>Validate actor, action, target, timestamp and outcome against an approved reference.</p></article>
+<article><h3>L3 · Correlation</h3><p>Justify identity and time matching, then test ambiguity and alternative explanations.</p></article>
+</div></section><section id="validation"><h2>Validation boundaries</h2>
+<div class="cards three">
+<article><h3>Documentary assessment</h3><strong class="state">Completed · PASS</strong><p>Product documentation supports a conditional recommendation to scope a transport-validation PoC.</p></article>
+<article><h3>Empirical PoC</h3><strong class="state">Open · Not performed</strong><p>Collect and reconcile observations in an authorized lab.</p></article>
+<article><h3>Production suitability</h3><strong class="state">Undetermined</strong><p>Assess security, operations and support after empirical validation.</p></article>
+</div></section></main>
+<footer><p>SOCRoot Labs · Independent security engineering research</p><a href="/about/">Research scope and disclosures</a></footer>
+</body></html>
